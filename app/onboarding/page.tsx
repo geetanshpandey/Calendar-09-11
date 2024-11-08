@@ -34,7 +34,7 @@ const OnboardingPage = () => {
       <Card className="w-full max-w-md p-8 shadow-2xl bg-white rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-gray-400 dark:bg-neutral-800 dark:border-none">
         <CardHeader>
           <CardTitle className="text-center text-2xl font-semibold text-gray-900 dark:text-white">
-            Welcome to <span>Calend</span><span className="text-blue-600">Ly</span>
+            Welcome to <span>Calend</span><span className="text-blue-600">ly</span>
           </CardTitle>
           <CardDescription className="text-center text-gray-600 mt-2 dark:text-gray-200">
             Please provide the following information to set up your profile.
@@ -45,7 +45,7 @@ const OnboardingPage = () => {
           <CardContent>
             {/* Full Name Field */}
             <div className="mb-6">
-              <Label htmlFor={fields.fullName.name} className="text-lg text-gray-800">
+              <Label htmlFor={fields.fullName.name} className="text-lg text-gray-800 dark:text-white">
                 Full Name
               </Label>
               <Input
@@ -54,7 +54,7 @@ const OnboardingPage = () => {
                 key={fields.fullName.key}
                 placeholder="Enter Full Name"
                 id={fields.fullName.name}
-                className="text-black w-full p-3 mt-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-gray-400 bg-white"
+                className="text-black w-full p-3 mt-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-gray-400 bg-white dark:bg-neutral-700 dark:text-white"
               />
               {fields.fullName.errors && (
                 <p className="text-red-500 text-sm mt-1">{fields.fullName.errors}</p>
@@ -62,19 +62,19 @@ const OnboardingPage = () => {
             </div>
 
             {/* Username Field */}
-            <div className="mb-6 bg-white text-black p-2 rounded-lg">
-              <Label htmlFor={fields.username.name} className="text-lg text-gray-800">
+            <div className="mb-6 bg-white text-black p-2 rounded-lg dark:bg-neutral-700">
+              <Label htmlFor={fields.username.name} className="text-lg text-gray-800 dark:text-white">
                 Username
               </Label>
-              <div className="flex items-center rounded-lg bg-white text-black">
-                <span className="bg-white px-4 text-gray-600">Unimanage.com/</span>
+              <div className="flex items-center rounded-lg text-black">
+                <span className="bg-white dark:bg-neutral-700 dark:text-white px-4 text-gray-600">Unimanage.com/</span>
                 <Input
                   type="text"
                   key={fields.username.key}
                   defaultValue={fields.username.initialValue}
                   name={fields.username.name}
                   placeholder="example-user-1"
-                  className="rounded-l-none flex-1 p-3 mt-2 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-gray-400 bg-white text-black"
+                  className="rounded-l-none flex-1 p-3 mt-2 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-gray-400 text-black dark:text-white"
                   id={fields.username.name}
                 />
               </div>

@@ -11,6 +11,7 @@ import { BookMarked, CalendarX2, Clock } from "lucide-react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import React from "react";
+import { Plus } from "lucide-react";
 
 async function getData(username: string, eventName: string) {
   const eventType = await prisma.eventType.findFirst({
@@ -74,32 +75,37 @@ const BookingPage = async ({
       {showForm ? (
         <Card className="shadow-xl hover:shadow-2xl transition-shadow duration-300">
           <CardContent>
-            <div className="flex items-center mb-6">
+            <div className="flex flex-col items-center text-center mb-6">
               <Image
                 src={eventType.user.image as string}
                 alt={`${eventType.user.name}'s profile picture`}
-                width={40}
-                height={40}
+                width={80}
+                height={80}
                 className="rounded-full border-2 border-primary"
               />
-              <div className="ml-4 mt-6"> {/* Increased mt-6 for more spacing */}
-                <p className="text-xl font-semibold text-black dark:text-white">{eventType.user.name}</p> {/* Username text color adjusts to light/dark mode */}
-                <h1 className="text-xl font-semibold mt-2 text-black dark:text-white">{eventType.title}</h1> {/* Title text color adjusts to light/dark mode */}
-                <p className="text-sm text-black dark:text-white mt-2">{eventType.description}</p> {/* Description text color adjusts to light/dark mode */}
+              <div className="mt-4">
+                <p className="text-2xl font-semibold text-black dark:text-white">
+                  {eventType.user.name}
+                </p>
+                <h1 className="text-xl font-semibold mt-2 text-black dark:text-white">
+                  {eventType.title}
+                </h1>
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">
+                  {eventType.description}
+                </p>
               </div>
-
             </div>
 
-            <div className="mt-5 grid gap-y-3">
-              <p className="flex items-center">
+            <div className="mt-5 grid gap-y-3 text-center">
+              <p className="flex justify-center items-center">
                 <CalendarX2 className="mr-2 text-primary" />
                 <span>{formattedDate}</span>
               </p>
-              <p className="flex items-center">
+              <p className="flex justify-center items-center">
                 <Clock className="mr-2 text-primary" />
                 <span>{eventType.duration} Mins</span>
               </p>
-              <p className="flex items-center">
+              <p className="flex justify-center items-center">
                 <BookMarked className="mr-2 text-primary" />
                 <span>{eventType.videoCallSoftware}</span>
               </p>
@@ -122,46 +128,70 @@ const BookingPage = async ({
               />
               <div className="flex flex-col gap-y-1">
                 <Label>Your Name</Label>
-                <Input name="name" placeholder="Your Name" className="border-gray-300 shadow-sm focus:ring-primary focus:border-primary" />
+                <Input
+                  name="name"
+                  placeholder="Your Name"
+                  className="border-gray-300 shadow-sm focus:ring-primary focus:border-primary"
+                />
               </div>
 
               <div className="flex flex-col gap-y-1">
                 <Label>Your Email</Label>
-                <Input name="email" placeholder="johndoe@gmail.com" className="border-gray-300 shadow-sm focus:ring-primary focus:border-primary" />
+                <Input
+                  name="email"
+                  placeholder="johndoe@gmail.com"
+                  className="border-gray-300 shadow-sm focus:ring-primary focus:border-primary"
+                />
               </div>
 
-              <SubmitButton text="Book Meeting" />
+              <div className="flex items-center space-x-4">
+                <button
+                  type="button"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all"
+                  aria-label="Add"
+                >
+                  <Plus size={20} />
+                </button>
+                
+                <SubmitButton text="Book Meeting" />
+              </div>
             </form>
           </CardContent>
         </Card>
       ) : (
         <Card className="shadow-xl hover:shadow-2xl transition-shadow duration-300">
           <CardContent>
-            <div className="flex items-center mb-6">
+            <div className="flex flex-col items-center text-center mb-6">
               <Image
                 src={eventType.user.image as string}
                 alt={`${eventType.user.name}'s profile picture`}
-                width={40}
-                height={40}
+                width={80}
+                height={80}
                 className="rounded-full border-2 border-primary"
               />
-              <div className="ml-4 mt-6"> {/* Increased mt-6 for more spacing */}
-                <p className="text-xl font-semibold text-white">{eventType.user.name}</p> {/* Username text size */}
-                <h1 className="text-xl font-semibold mt-2 text-white">{eventType.title}</h1> {/* Title text size same as username */}
-                <p className="text-sm text-white mt-2">{eventType.description}</p>
+              <div className="mt-4">
+                <p className="text-2xl font-semibold text-white">
+                  {eventType.user.name}
+                </p>
+                <h1 className="text-xl font-semibold mt-2 text-white">
+                  {eventType.title}
+                </h1>
+                <p className="text-sm text-gray-400 mt-2">
+                  {eventType.description}
+                </p>
               </div>
             </div>
 
-            <div className="mt-5 grid gap-y-3">
-              <p className="flex items-center">
+            <div className="mt-5 grid gap-y-3 text-center">
+              <p className="flex justify-center items-center">
                 <CalendarX2 className="mr-2 text-primary" />
                 <span>{formattedDate}</span>
               </p>
-              <p className="flex items-center">
+              <p className="flex justify-center items-center">
                 <Clock className="mr-2 text-primary" />
                 <span>{eventType.duration} Mins</span>
               </p>
-              <p className="flex items-center">
+              <p className="flex justify-center items-center">
                 <BookMarked className="mr-2 text-primary" />
                 <span>{eventType.videoCallSoftware}</span>
               </p>
