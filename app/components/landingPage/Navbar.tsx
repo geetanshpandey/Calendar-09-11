@@ -6,7 +6,7 @@ import { AuthModal } from "./AuthModal";
 
 export function Navbar() {
   return (
-    <div className="flex justify-between items-center py-4 px-4 lg:px-6">
+    <div className="flex justify-between items-center py-4 px-4 lg:px-6 dark:bg-black">
       {/* Logo Section */}
       <Link href="/" className="flex items-center gap-2">
         <div className="flex items-center gap-2 mb-1">
