@@ -1,32 +1,32 @@
 import Image from "next/image";
-
 import HeroImage from "@/public/better.png";
 import { AuthModal } from "./AuthModal";
 
 export function Hero() {
   return (
-    <section>
-      <div>
-        <div className="text-center">
-          <span>Introducing Unimanage 1.0</span>
+    <section className="min-h-screen flex flex-col items-center justify-center bg-white relative overflow-hidden mt-20 dark:bg-black">
+      <div className="container mx-auto text-center max-w-3xl px-6">
+        <div className="mb-12">
+          <span className="text-2xl font-medium text-gray-700 dark:text-gray-200">Introducing Unimanage 1.0</span>
 
-          <h1>
+          <h1 className="text-6xl font-bold mt-4">
             Scheduling made{" "}
-            <span className="block text-primary">super easy!</span>
+            <span className="block text-primary text-7xl">super easy!</span>
           </h1>
 
-          <p>
+          <p className="mt-4 text-gray-600 text-1xl dark:text-gray-200">
             Scheduling a meeting can be a pain. But we at Unimanage make it easy
             for your clients to schedule meetings with you.
           </p>
-          <div className=" mt-5 mb-12">
+
+          <div className="mt-8">
             <AuthModal />
           </div>
         </div>
 
-        <div>
+        <div className="relative w-full flex justify-center mt-16">
           <svg
-            className="absolute inset-0 -mt-24 blur-3xl"
+            className="absolute inset-0 blur-3xl"
             style={{ zIndex: -1 }}
             fill="none"
             viewBox="0 0 400 400"
@@ -79,7 +79,7 @@ export function Hero() {
             </defs>
           </svg>
 
-          <Image src={HeroImage} alt="Hero image" priority />
+          <Image src={HeroImage} alt="Hero image" priority className="max-w-full h-auto" />
         </div>
       </div>
     </section>

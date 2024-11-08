@@ -70,37 +70,41 @@ const BookingPage = async ({
   const showForm = !!searchParams.date && !!searchParams.time;
 
   return (
-    <div>
+    <div className="max-w-4xl mx-auto px-4 py-8">
       {showForm ? (
-        <Card>
+        <Card className="shadow-xl hover:shadow-2xl transition-shadow duration-300">
           <CardContent>
-            <div>
+            <div className="flex items-center mb-6">
               <Image
                 src={eventType.user.image as string}
                 alt={`${eventType.user.name}'s profile picture`}
-                width={30}
-                height={30}
+                width={40}
+                height={40}
+                className="rounded-full border-2 border-primary"
               />
-              <p>{eventType.user.name}</p>
-              <h1>{eventType.title}</h1>
-              <p>{eventType.description}</p>
-
-              <div className="mt-5 grid gap-y-3">
-                <p className="flex items-center">
-                  <CalendarX2 className="mr-2 text-primary" />
-                  <span>{formattedDate}</span>
-                </p>
-                <p className="flex items-center">
-                  <Clock className="mr-2 text-primary" />
-                  <span>{eventType.duration} Mins</span>
-                </p>
-                <p className="flex items-center">
-                  <BookMarked className="mr-2 text-primary" />
-                  <span>{eventType.videoCallSoftware}</span>
-                </p>
+              <div className="ml-4 mt-6"> {/* Increased mt-6 for more spacing */}
+                <p className="text-xl font-semibold text-white">{eventType.user.name}</p> {/* Username text size */}
+                <h1 className="text-xl font-semibold mt-2 text-white">{eventType.title}</h1> {/* Title text size same as username */}
+                <p className="text-sm text-white mt-2">{eventType.description}</p>
               </div>
             </div>
-            <Separator orientation="vertical" />
+
+            <div className="mt-5 grid gap-y-3">
+              <p className="flex items-center">
+                <CalendarX2 className="mr-2 text-primary" />
+                <span>{formattedDate}</span>
+              </p>
+              <p className="flex items-center">
+                <Clock className="mr-2 text-primary" />
+                <span>{eventType.duration} Mins</span>
+              </p>
+              <p className="flex items-center">
+                <BookMarked className="mr-2 text-primary" />
+                <span>{eventType.videoCallSoftware}</span>
+              </p>
+            </div>
+
+            <Separator className="my-6" />
 
             <form
               className="flex flex-col gap-y-4"
@@ -117,12 +121,12 @@ const BookingPage = async ({
               />
               <div className="flex flex-col gap-y-1">
                 <Label>Your Name</Label>
-                <Input name="name" placeholder="Your Name" />
+                <Input name="name" placeholder="Your Name" className="border-gray-300 shadow-sm focus:ring-primary focus:border-primary" />
               </div>
 
               <div className="flex flex-col gap-y-1">
                 <Label>Your Email</Label>
-                <Input name="email" placeholder="johndoe@gmail.com" />
+                <Input name="email" placeholder="johndoe@gmail.com" className="border-gray-300 shadow-sm focus:ring-primary focus:border-primary" />
               </div>
 
               <SubmitButton text="Book Meeting" />
@@ -130,41 +134,45 @@ const BookingPage = async ({
           </CardContent>
         </Card>
       ) : (
-        <Card>
+        <Card className="shadow-xl hover:shadow-2xl transition-shadow duration-300">
           <CardContent>
-            <div>
+            <div className="flex items-center mb-6">
               <Image
                 src={eventType.user.image as string}
                 alt={`${eventType.user.name}'s profile picture`}
-                width={30}
-                height={30}
+                width={40}
+                height={40}
+                className="rounded-full border-2 border-primary"
               />
-              <p>{eventType.user.name}</p>
-              <h1>{eventType.title}</h1>
-              <p>{eventType.description}</p>
-              <div className="mt-5 grid gap-y-3">
-                <p className="flex items-center">
-                  <CalendarX2 className="mr-2 text-primary" />
-                  <span>{formattedDate}</span>
-                </p>
-                <p className="flex items-center">
-                  <Clock className="mr-2 text-primary" />
-                  <span>{eventType.duration} Mins</span>
-                </p>
-                <p className="flex items-center">
-                  <BookMarked className="mr-2 text-primary" />
-                  <span>{eventType.videoCallSoftware}</span>
-                </p>
+              <div className="ml-4 mt-6"> {/* Increased mt-6 for more spacing */}
+                <p className="text-xl font-semibold text-white">{eventType.user.name}</p> {/* Username text size */}
+                <h1 className="text-xl font-semibold mt-2 text-white">{eventType.title}</h1> {/* Title text size same as username */}
+                <p className="text-sm text-white mt-2">{eventType.description}</p>
               </div>
             </div>
 
-            <Separator orientation="vertical" />
+            <div className="mt-5 grid gap-y-3">
+              <p className="flex items-center">
+                <CalendarX2 className="mr-2 text-primary" />
+                <span>{formattedDate}</span>
+              </p>
+              <p className="flex items-center">
+                <Clock className="mr-2 text-primary" />
+                <span>{eventType.duration} Mins</span>
+              </p>
+              <p className="flex items-center">
+                <BookMarked className="mr-2 text-primary" />
+                <span>{eventType.videoCallSoftware}</span>
+              </p>
+            </div>
 
-            <div>
+            <Separator className="my-6" />
+
+            <div className="flex justify-center">
               <RenderCalendar daysofWeek={eventType.user.Availability} />
             </div>
 
-            <Separator orientation="vertical" />
+            <Separator className="my-6" />
 
             <TimeSlots
               selectedDate={selectedDate}

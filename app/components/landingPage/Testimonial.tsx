@@ -6,10 +6,10 @@ export function Testimonial() {
       <div>
         {/* Blockquote */}
         <blockquote>
-          <YouTube />
+          
 
           <div className="">
-            <p>
+            {/* <p>
               <svg
                 width={16}
                 height={13}
@@ -23,17 +23,13 @@ export function Testimonial() {
                   fill="currentColor"
                 />
               </svg>
-              <span className="relative z-10 ">
-                Wow Unimanage is the best platform i have ever used. Definitely
-                Recommend it to you guys, try it out!
-              </span>
-            </p>
+            </p> */}
           </div>
-          <footer className="mt-6">
-            <div className="font-semibold ">Jan Marshal</div>
+          <footer>
+            {/* <div className="font-semibold ">Jan Marshal</div>
             <div className="text-sm text-muted-foreground">
               Programmer | YouTuber
-            </div>
+            </div> */}
           </footer>
         </blockquote>
         {/* End Blockquote */}

@@ -122,6 +122,7 @@ export function SettingsForm({ fullName, email, profileImage }: iAppProps) {
         </CardContent>
         <CardFooter>
           <SubmitButton text="Save Changes" />
+          <Button className="ml-2 bg-red-500">Close</Button>
         </CardFooter>
       </form>
     </Card>

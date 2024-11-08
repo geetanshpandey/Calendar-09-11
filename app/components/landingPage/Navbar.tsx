@@ -1,30 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "@/public/logo.png";
-
 import { ThemeToggle } from "../dashboard/ThemeToggle";
 import { AuthModal } from "./AuthModal";
+
 export function Navbar() {
   return (
-    <div>
-      <div>
-        <Link href="/" className="flex items-center gap-2">
-          <Image src={Logo} className="size-10" alt="Logo" />
-
+    <div className="flex justify-between items-center py-4 px-4 lg:px-6">
+      {/* Logo Section */}
+      <Link href="/" className="flex items-center gap-2">
+        <div className="flex items-center gap-2 mb-1">
+          <Image src={Logo} className="w-10 h-10" alt="Logo" />
           <h4 className="text-3xl font-semibold">
-            Cal<span className="text-primary">Marshal</span>
+            Calend<span className="text-primary">Marshal</span>
           </h4>
-        </Link>
-        <div className="md:hidden">
-          <ThemeToggle />
         </div>
-      </div>
+      </Link>
 
-      <nav>
+      {/* Right Section (ThemeToggle + Try Button + Authentication Modal) */}
+      <div className="flex items-center gap-4 ml-auto">
+        {/* Try Button */}
+
+        {/* ThemeToggle (for all screen sizes) */}
         <ThemeToggle />
 
+        {/* Authentication Modal */}
         <AuthModal />
-      </nav>
+      </div>
     </div>
   );
 }
