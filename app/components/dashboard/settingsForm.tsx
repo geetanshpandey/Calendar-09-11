@@ -65,14 +65,14 @@ export function SettingsForm({ fullName, email, profileImage }: iAppProps) {
             <Input
               name={fields.fullName.name}
               key={fields.fullName.key}
-              placeholder="Jan Marshall"
+              placeholder="Enter your full name"
               defaultValue={fullName}
             />
             <p className="text-red-500 text-sm">{fields.fullName.errors}</p>
           </div>
           <div className="flex flex-col gap-y-2">
             <Label>Email</Label>
-            <Input disabled placeholder="Jan Marshall" defaultValue={email} />
+            <Input disabled placeholder="Enter your full name" defaultValue={email} />
           </div>
 
           <div className="grid gap-y-5">

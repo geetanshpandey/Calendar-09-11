@@ -37,6 +37,7 @@ export function DasboardLinks() {
   const pathname = usePathname();
   return (
     <>
+      <div className="fixed">
       {dashboardLinks.map((link) => (
         <Link
           key={link.id}
@@ -52,6 +53,7 @@ export function DasboardLinks() {
           {link.name}
         </Link>
       ))}
+      </div>
     </>
   );
 }

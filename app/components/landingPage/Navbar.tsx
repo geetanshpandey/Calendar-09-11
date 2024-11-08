@@ -12,7 +12,7 @@ export function Navbar() {
         <div className="flex items-center gap-2 mb-1">
           <Image src={Logo} className="w-10 h-10" alt="Logo" />
           <h4 className="text-3xl font-semibold">
-            Calend<span className="text-primary">Marshal</span>
+            Calend<span className="text-primary">ly</span>
           </h4>
         </div>
       </Link>

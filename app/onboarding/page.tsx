@@ -30,13 +30,13 @@ const OnboardingPage = () => {
   });
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-50 to-green-50 p-6">
-      <Card className="w-full max-w-md p-8 shadow-2xl bg-white rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-gray-400">
+    <div className="min-h-screen flex items-center justify-center bg-neutral-900 p-6">
+      <Card className="w-full max-w-md p-8 shadow-2xl bg-white rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-gray-400 dark:bg-neutral-800 dark:border-none">
         <CardHeader>
-          <CardTitle className="text-center text-2xl font-semibold text-gray-900">
-            Welcome to <span>Cal</span><span className="text-blue-600">Marshal</span>
+          <CardTitle className="text-center text-2xl font-semibold text-gray-900 dark:text-white">
+            Welcome to <span>Calend</span><span className="text-blue-600">Ly</span>
           </CardTitle>
-          <CardDescription className="text-center text-gray-600 mt-2">
+          <CardDescription className="text-center text-gray-600 mt-2 dark:text-gray-200">
             Please provide the following information to set up your profile.
           </CardDescription>
         </CardHeader>

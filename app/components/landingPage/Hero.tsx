@@ -7,7 +7,7 @@ export function Hero() {
     <section className="min-h-screen flex flex-col items-center justify-center bg-white relative overflow-hidden mt-20 dark:bg-black">
       <div className="container mx-auto text-center max-w-3xl px-6">
         <div className="mb-12">
-          <span className="text-2xl font-medium text-gray-700 dark:text-gray-200">Introducing Unimanage 1.0</span>
+          <span className="text-2xl font-medium text-gray-700 dark:text-gray-200">Introducing Calendly</span>
 
           <h1 className="text-6xl font-bold mt-4">
             Scheduling made{" "}

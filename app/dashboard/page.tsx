@@ -25,7 +25,6 @@ async function getData(id: string) {
     where: {
       id: id,
     },
-
     select: {
       EventType: {
         select: {
@@ -57,11 +56,11 @@ const DashboardPage = async () => {
   return (
     <>
       {/* Outermost container centered */}
-      <div className="flex flex-col items-center justify-center min-h-screen px-4">
-        {/* Centered heading and button */}
-        <div className="flex flex-col items-center justify-center text-center mb-8 -mt-60">
-          <h1 className="text-2xl font-semibold">Create and manage your event types.</h1>
-          <Button asChild className="mt-4">
+      <div className="flex flex-col items-center justify-center min-h-screen px-4 -mt-16">
+        {/* Heading and button in the same line */}
+        <div className="flex items-center justify-between w-full max-w-4xl mb-8 -mt-60">
+          <h1 className="text-2xl font-semibold -ml-8 mr-8">Create and manage your event types</h1>
+          <Button asChild className="-mr-10">
             <Link href="/dashboard/new">Create New Event</Link>
           </Button>
         </div>
@@ -74,7 +73,7 @@ const DashboardPage = async () => {
             href="/dashboard/new"
           />
         ) : (
-          <div className="w-full max-w-4xl"> {/* Center content with max width */}
+          <div className="w-full max-w-4xl bg-gray-100 dark:bg-gray-800 rounded-lg mb-4">
             {data.EventType.map((item) => (
               <div key={item.id} className="border-none p-4 mb-4 rounded-lg">
                 <Link href={`/dashboard/event/${item.id}`}>

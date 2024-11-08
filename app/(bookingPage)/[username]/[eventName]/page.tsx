@@ -83,10 +83,11 @@ const BookingPage = async ({
                 className="rounded-full border-2 border-primary"
               />
               <div className="ml-4 mt-6"> {/* Increased mt-6 for more spacing */}
-                <p className="text-xl font-semibold text-white">{eventType.user.name}</p> {/* Username text size */}
-                <h1 className="text-xl font-semibold mt-2 text-white">{eventType.title}</h1> {/* Title text size same as username */}
-                <p className="text-sm text-white mt-2">{eventType.description}</p>
+                <p className="text-xl font-semibold text-black dark:text-white">{eventType.user.name}</p> {/* Username text color adjusts to light/dark mode */}
+                <h1 className="text-xl font-semibold mt-2 text-black dark:text-white">{eventType.title}</h1> {/* Title text color adjusts to light/dark mode */}
+                <p className="text-sm text-black dark:text-white mt-2">{eventType.description}</p> {/* Description text color adjusts to light/dark mode */}
               </div>
+
             </div>
 
             <div className="mt-5 grid gap-y-3">
